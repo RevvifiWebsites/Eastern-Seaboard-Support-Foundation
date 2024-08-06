@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Example</title>
+</head>
+<body>
+
+    <form class="form" id="loginForm">
+        <h1>Admin Login</h1>
+        <div class="form__input-group">
+            <input type="text" class="form-input" autofocus placeholder="Username" id="username" required>
+        </div>
+        <div class="form__input-group">
+            <input type="password" class="form-input" autofocus placeholder="Password" id="password" required>
+        </div>
+        <button type="submit" class="form__button">Login</button>
+    </form>
+
+    <script src="assets/js/forums.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Script loaded"); // Debugging log
+
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                console.log(`Username: ${username}, Password: ${password}`); // Debugging log
+
+                // Define the correct username and password
+                const correctUsername = '1Mystery';
+                const correctPassword = '5UWNJP%PN{hd291d{Z/{';
+
+                // Check if the entered credentials match the correct ones
+                if (username === correctUsername && password === correctPassword) {
+                    console.log("Credentials are correct, redirecting..."); // Debugging log
+                    // Redirect to another page
+                    window.location.href = './spreadsheet-upload.html';
+                } else {
+                    console.log("Incorrect username or password"); // Debugging log
+                    alert('Incorrect username or password. Please try again.');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
